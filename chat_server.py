@@ -1,0 +1,80 @@
+import time
+import pyautogui
+def gui():
+    try:
+        time.sleep(5)
+        button_image_loc = pyautogui.locateOnScreen("pyimages\\1.png")
+        print (button_image_loc)
+        if button_image_loc != None:
+            clip_button7x, clip_button7y = pyautogui.center(button_image_loc)
+            pyautogui.click(clip_button7x, clip_button7y)
+            time.sleep(3)
+        name = pyautogui.locateOnScreen("pyimages\\name.png")
+        age = pyautogui.locateOnScreen("pyimages\\age.png")
+        made = pyautogui.locateOnScreen("pyimages\\made.png")
+        hi = pyautogui.locateOnScreen("pyimages\\hi.png")
+        hello = pyautogui.locateOnScreen("pyimages\\hello.png")
+        print (name)
+        print (age)
+        print (made)
+        if name != None:
+            pyautogui.typewrite("Mr. Smite")
+            time.sleep(2)
+            pyautogui.press('enter')
+            time.sleep(2)
+            x,y = pyautogui.locateCenterOnScreen("pyimages\\name.png")
+            print ('{},{}'.format(x,y))
+            pyautogui.moveTo(x,y)
+            # pyautogui.click(x,y)
+        if age != None:
+            pyautogui.typewrite("Just going to be born...")
+            time.sleep(2)
+            pyautogui.press('enter')
+            time.sleep(2)
+            agex,agey = pyautogui.locateCenterOnScreen("pyimages\\age.png")
+            print ('{},{}'.format(agex,agey))
+            pyautogui.moveTo(agex,agey)
+        if made != None:
+            pyautogui.typewrite("Well God created human and human like Soumya created me..")
+            time.sleep(2)
+            pyautogui.press('enter')
+            time.sleep(2)
+            madex,madey = pyautogui.locateCenterOnScreen("pyimages\\made.png")
+            print ('{},{}'.format(madex,madey))
+            pyautogui.moveTo(madex,madey)
+        if hi != None:
+            pyautogui.typewrite("Hello")
+            time.sleep(2)
+            pyautogui.press('enter')
+            time.sleep(2)
+            hix,hiy = pyautogui.locateCenterOnScreen("pyimages\\hi.png")
+            print ('{},{}'.format(hix,hiy))
+            pyautogui.moveTo(hix,hiy)
+        if hello != None:
+            pyautogui.typewrite("Hi")
+            time.sleep(2)
+            pyautogui.press('enter')
+            time.sleep(2)
+            hellox,helloy = pyautogui.locateCenterOnScreen("pyimages\\hello.png")
+            print ('{},{}'.format(hellox,helloy))
+            pyautogui.moveTo(hellox,helloy)
+        time.sleep(2)
+        down_arrow = pyautogui.locateOnScreen("pyimages\\down_arrow.png")
+        arrowx,arrowy = pyautogui.center(down_arrow)
+        pyautogui.click(arrowx,arrowy)
+        time.sleep(2)
+        for i in range(0,4):
+            pyautogui.press('down')
+        pyautogui.press("enter")
+        time.sleep(2)
+        del4me = pyautogui.locateOnScreen("pyimages\\del_4_me.png")
+        del4x,del4y = pyautogui.center(del4me)
+        pyautogui.click(del4x,del4y)
+        time.sleep(2)
+    except TypeError:
+        # time.sleep(5)
+        gui()
+        
+if __name__ == '__main__':
+    while True:
+        gui()
